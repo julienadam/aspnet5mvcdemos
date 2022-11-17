@@ -1,0 +1,27 @@
+﻿@model ViewsDemo.Models.Client
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>Binding test</h2>
+
+@using (Html.BeginForm("Input", "Binding"))
+{
+    <input type="Text" name="Nom" />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Submit" class="btn btn-default" />
+        </div>
+    </div>
+}
+<hr />
+@using (Html.BeginForm("Bind", "Binding"))
+{
+    <input type="Text" name="Nom" />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Submit" class="btn btn-default" />
+        </div>
+    </div>
+}
