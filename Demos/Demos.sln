@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomImageResultDemo", "Cu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutingDemoTests", "RoutingDemoTests\RoutingDemoTests.csproj", "{D3918FE8-6866-47A3-BBEE-671F19DE6BEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewsDemo", "ViewsDemo\ViewsDemo.csproj", "{F05ED676-F9DF-4721-8E48-1FA9FFB61355}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D3918FE8-6866-47A3-BBEE-671F19DE6BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3918FE8-6866-47A3-BBEE-671F19DE6BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3918FE8-6866-47A3-BBEE-671F19DE6BEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F05ED676-F9DF-4721-8E48-1FA9FFB61355}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F05ED676-F9DF-4721-8E48-1FA9FFB61355}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F05ED676-F9DF-4721-8E48-1FA9FFB61355}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F05ED676-F9DF-4721-8E48-1FA9FFB61355}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
