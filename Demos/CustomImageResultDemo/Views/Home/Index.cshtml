@@ -1,0 +1,16 @@
+﻿@using CustomImageResultDemo.Plumbing
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Image Result demo</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <img src='/Home/DisplayTime' width="200" height="50" alt="Current time" />
+        @*<img src='@Url.Action("DisplayTime")' width="200" height="100" alt="Current time" />*@
+        @*@Html.Image("Home", "DisplayTime", 200, 50, "Current time")*@
+    </div>
+</div>
