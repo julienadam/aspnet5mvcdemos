@@ -113,3 +113,26 @@
 }
 
 <!-- HTML comment -->
+<H1>Render partial without data</H1>
+@{
+    Html.RenderPartial("Nyan");
+}
+
+<hr />
+
+<H1>Render partial with data</H1>
+@{
+    Html.RenderPartial("News/Ticker", "foo");
+}
+
+<hr />
+
+<H1>Render partial with string tweaking</H1>
+@{
+    var rendered = Html.Partial("Nyan");
+    var replaced = rendered.ToHtmlString().Replace("nyan.png", "ninjanyan.jpg");
+    @Html.Raw(replaced)
+}
+
+<hr />
+
