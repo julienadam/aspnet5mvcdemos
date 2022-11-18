@@ -1,0 +1,15 @@
+﻿@Ajax.ActionLink(
+    "Start",
+    "Work",
+    null,
+    new AjaxOptions
+    {
+        UpdateTargetId = "result"
+    },
+    new Dictionary<string, object> { { "class", "btn btn-primary" } })
+<div id="result">En attente...</div>
+
+
+@section scripts{
+    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
+}
