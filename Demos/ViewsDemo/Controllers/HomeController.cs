@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ViewsDemo.Models;
 
 namespace ViewsDemo.Controllers
 {
@@ -25,6 +26,19 @@ namespace ViewsDemo.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult ServerInfo()
+        {
+            var serverInfo = new ServerInfoViewModel
+            {
+                Cores = Environment.ProcessorCount,
+                MachineName = Environment.MachineName,
+                OperatingSystem = Environment.OSVersion.ToString(),
+                CLRVersion = Environment.Version.ToString(),
+            };
+
+            return PartialView("ServerInfo/ServerInfo", serverInfo);
         }
     }
 }

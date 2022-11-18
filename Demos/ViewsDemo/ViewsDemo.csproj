@@ -132,6 +132,7 @@
     </Compile>
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ServerInfoViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +177,7 @@
     <Content Include="Views\Client\Index.cshtml" />
     <Content Include="Views\Binding\Index.cshtml" />
     <Content Include="Views\Product\Create.cshtml" />
+    <Content Include="Views\Shared\ServerInfo\ServerInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
