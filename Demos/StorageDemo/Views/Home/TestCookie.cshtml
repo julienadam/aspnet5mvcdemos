@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "TestCookie";
+}
+
+<div>
+    <h2>Request cookies depuis Razor</h2>
+    @foreach (string key in Response.Cookies.AllKeys)
+    {
+        var cookie = Request.Cookies[key];
+        <p>Clé : @cookie.Name</p>
+        <p>Valeur : @cookie.Value</p>
+        <p>Expiration : @cookie.Expires</p>
+        <p>SSL seulement : @cookie.Secure</p>
+    }
+
+    <h2>Response cookies depuis Razor</h2>
+    @foreach (string key in Response.Cookies.AllKeys)
+    {
+        var cookie = Request.Cookies[key];
+        <p>Clé : @cookie.Name</p>
+        <p>Valeur : @cookie.Value</p>
+        <p>Expiration : @cookie.Expires</p>
+        <p>SSL seulement : @cookie.Secure</p>
+    }
+
+    <h2>Cookies depuis javascript</h2>
+    <div id="js-cookies"></div>
+
+    @* Le script doit être ici sinon jquery ne sera pas défini *@
+    @section scripts
+    {
+        <script type="text/javascript">
+            $(document).ready(function () {
+                function listCookies() {
+                    var theCookies = document.cookie.split(';');
+                    var aString = '';
+                    for (var i = 1; i <= theCookies.length; i++) {
+                        aString += i + ' ' + theCookies[i - 1] + "\n";
+                    }
+
+                    $("#js-cookies").text(aString);
+                }
+
+                listCookies();
+            });
+        </script>
+    }
+
+</div>
