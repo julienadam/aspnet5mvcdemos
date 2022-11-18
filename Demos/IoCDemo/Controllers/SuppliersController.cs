@@ -13,7 +13,12 @@ namespace IoCDemo.Controllers
 {
     public class SuppliersController : Controller
     {
-        private readonly NorthwindContext db = new NorthwindContext();
+        private readonly NorthwindContext db;
+
+        public SuppliersController(NorthwindContext db)
+        {
+            this.db = db;
+        }
 
         // GET: Suppliers
         public async Task<ActionResult> Index()
