@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageDemo", "StorageDemo\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilterDemo", "FilterDemo\FilterDemo.csproj", "{4E8ABD95-78F0-4E5B-A1C1-349D63D2A114}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCDemo", "IoCDemo\IoCDemo.csproj", "{CDF18E41-A54A-477D-AB76-D8EE0B8DD7D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{4E8ABD95-78F0-4E5B-A1C1-349D63D2A114}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E8ABD95-78F0-4E5B-A1C1-349D63D2A114}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E8ABD95-78F0-4E5B-A1C1-349D63D2A114}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDF18E41-A54A-477D-AB76-D8EE0B8DD7D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDF18E41-A54A-477D-AB76-D8EE0B8DD7D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDF18E41-A54A-477D-AB76-D8EE0B8DD7D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDF18E41-A54A-477D-AB76-D8EE0B8DD7D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
