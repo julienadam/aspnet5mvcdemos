@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using IoCDemo.Models;
 
@@ -13,17 +8,17 @@ namespace IoCDemo.Controllers
 {
     public class SuppliersController : Controller
     {
-        private readonly NorthwindContext db;
+        private readonly ISuppliersRepository suppliersRepo;
 
-        public SuppliersController(NorthwindContext db)
+        public SuppliersController(ISuppliersRepository suppliersRepo)
         {
-            this.db = db;
+            this.suppliersRepo = suppliersRepo ?? throw new ArgumentNullException(nameof(suppliersRepo));
         }
 
         // GET: Suppliers
         public async Task<ActionResult> Index()
         {
-            return View(await db.Suppliers.ToListAsync());
+            return View(await suppliersRepo.GetAll());
         }
 
         // GET: Suppliers/Details/5
@@ -33,7 +28,7 @@ namespace IoCDemo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Supplier supplier = await db.Suppliers.FindAsync(id);
+            Supplier supplier = await suppliersRepo.GetById(id.Value);
             if (supplier == null)
             {
                 return HttpNotFound();
@@ -56,8 +51,8 @@ namespace IoCDemo.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Suppliers.Add(supplier);
-                await db.SaveChangesAsync();
+                suppliersRepo.Create(supplier);
+
                 return RedirectToAction("Index");
             }
 
@@ -71,7 +66,7 @@ namespace IoCDemo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Supplier supplier = await db.Suppliers.FindAsync(id);
+            var supplier = await suppliersRepo.GetById(id.Value);
             if (supplier == null)
             {
                 return HttpNotFound();
@@ -88,8 +83,7 @@ namespace IoCDemo.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(supplier).State = EntityState.Modified;
-                await db.SaveChangesAsync();
+                await suppliersRepo.Update(supplier);
                 return RedirectToAction("Index");
             }
             return View(supplier);
@@ -102,7 +96,8 @@ namespace IoCDemo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Supplier supplier = await db.Suppliers.FindAsync(id);
+
+            var supplier = await suppliersRepo.GetById(id.Value);
             if (supplier == null)
             {
                 return HttpNotFound();
@@ -115,19 +110,9 @@ namespace IoCDemo.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Supplier supplier = await db.Suppliers.FindAsync(id);
-            db.Suppliers.Remove(supplier);
-            await db.SaveChangesAsync();
-            return RedirectToAction("Index");
-        }
+            await suppliersRepo.DeleteById(id);
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
+            return RedirectToAction("Index");
         }
     }
 }

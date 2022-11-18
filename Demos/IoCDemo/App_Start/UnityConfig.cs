@@ -41,7 +41,9 @@ namespace IoCDemo
             // container.LoadConfiguration();
 
             // TODO: Register your type's mappings here.
-            theContainer.RegisterType<NorthwindContext, NorthwindContext>();
+            theContainer.RegisterType<NorthwindContext>();
+            // theContainer.RegisterType<ISuppliersRepository, EfSuppliersRepository>();
+            theContainer.RegisterSingleton<ISuppliersRepository, FakeSuppliersRepository>();
         }
     }
 }
