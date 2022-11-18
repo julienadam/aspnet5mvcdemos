@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilterDemo", "FilterDemo\Fi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCDemo", "IoCDemo\IoCDemo.csproj", "{CDF18E41-A54A-477D-AB76-D8EE0B8DD7D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A11_RBS", "role-security-mvc5\A11_RBS.csproj", "{2A7BA3BA-12D8-42A7-9B7B-7148D773DF80}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{CDF18E41-A54A-477D-AB76-D8EE0B8DD7D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDF18E41-A54A-477D-AB76-D8EE0B8DD7D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDF18E41-A54A-477D-AB76-D8EE0B8DD7D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A7BA3BA-12D8-42A7-9B7B-7148D773DF80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A7BA3BA-12D8-42A7-9B7B-7148D773DF80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A7BA3BA-12D8-42A7-9B7B-7148D773DF80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A7BA3BA-12D8-42A7-9B7B-7148D773DF80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
